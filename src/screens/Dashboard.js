@@ -2,11 +2,12 @@ import React from 'react'
 import { ImageBackground, ScrollView, StyleSheet, Text, View } from 'react-native'
 import CardView from '../components/cardView'
 import { theme } from '../core/theme'
-
+import BackButton from '../components/BackButton'
+import NormalCourseCard from '../components/normalCourseCard'
 
 const Dashboard = ({navigation}) => {
   return (  
-      <View style={styles.container}>
+    <View style={styles.container}>
           <ImageBackground
               source={require('../assets/background_dot.png')}
               style={styles.background}>
@@ -15,6 +16,12 @@ const Dashboard = ({navigation}) => {
                 </View>
                   <View style={{marginLeft:20,marginRight:20}}>
                     <CardView/>
+                </View>
+                <View style={[styles.trending , styles.normal]}>
+                  <Text style={styles.trendingtxt}>Normal course</Text>
+                </View>
+                  <View style={{marginLeft:20,marginRight:20}}>
+                    <NormalCourseCard/>
                 </View>
           </ImageBackground>  
       </View>
@@ -43,5 +50,8 @@ const styles = StyleSheet.create({
     padding:10,
     fontWeight:"900",
     fontSize:15
+  },
+  normal:{
+    marginTop:60
   }
 })

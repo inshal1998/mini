@@ -1,25 +1,42 @@
-import React, { useState } from 'react'
-import { Image, StyleSheet, Text, View } from 'react-native'
-import Background from '../components/Background'
+import React from 'react'
+import { StyleSheet, View,ImageBackground, Image, Text } from 'react-native'
+import BackButton from '../components/BackButton';
 
 const detailScreen = ({ route,navigation}) => {
     const { itemId, email,image } = route.params;
 
     return (
-    <View style={styles.container}>
+        <View style={styles.container}>
         <ImageBackground
               source={require('../assets/background_dot.png')}
               style={styles.background}>
-        </ImageBackground>
-        {/* <View>
-            <Image style={{height:130 , width:130}} source={{uri:image}}/>
+            <BackButton goBack={navigation.goBack}   />
+        <View>
+            <Image style={styles.image} source={{uri:image}}/>
             <Text>itemId: {JSON.stringify(itemId)}</Text>
             <Text>itemId: {JSON.stringify(email)}</Text>
-        </View> */}
+        </View  >
+        </ImageBackground>
     </View>
     )
 }
 
 export default detailScreen
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    background :{
+        flex: 1,
+        paddingHorizontal:20,
+    },  
+    container :{
+        flex:1,
+        width: '100%',
+        height: 800,
+      },
+    image :{
+        height:"50%" ,
+        width:"100%",
+        borderRadius:10 ,
+        marginTop:60 
+    }
+})

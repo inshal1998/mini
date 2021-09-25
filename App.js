@@ -10,6 +10,7 @@ import RegisterScreen from "./src/screens/RegisterScreen";
 import ResetPasswordScreen from "./src/screens/ResetPasswordScreen";
 import StartScreen from "./src/screens/StartScreen";
 import detailScreen from "./src/screens/detailScreen";
+import normalCourseCard from "./src/components/normalCourseCard";
 
 const Stack = createNativeStackNavigator();
 
@@ -29,6 +30,7 @@ const App = () => {
         <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
         <Stack.Screen name="Dashboard" component={Dashboard} />
         <Stack.Screen name="ResetPasswordScreen" component={ResetPasswordScreen} />
+        <Stack.Screen name="normalCourseCard" component={normalCourseCard} />
         <Stack.Screen name="detailScreen" component={detailScreen} />
       </Stack.Navigator>
     </NavigationContainer>
